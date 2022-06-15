@@ -44,11 +44,5 @@ public class EmployeeReader {
         return empMap;
     }
 
-    public HashMap<Integer, ArrayList<Employee>> initMap (){
-        HashMap<Integer, ArrayList<Employee>> temp = new HashMap<>();
-        for (int i = 0; i < 12; i++){
-            temp.put(i, new ArrayList<>());
-        }
-        return temp;
-    }
+
 }
