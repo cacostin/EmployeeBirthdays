@@ -47,4 +47,8 @@ public class Employee {
         String date[] = this.birth.split("/");
         return Integer.parseInt(date[0]);
     }
+
+    public String toString(){
+        return this.first + " " + this.last + " " +  this.birth;
+    }
 }
