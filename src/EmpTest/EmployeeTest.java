@@ -10,7 +10,6 @@ class EmployeeTest {
     Employee one;
     Employee two = new Employee("Tim", "Smith", "10/7/1992");
 
-
     @Test
     void getLast() {
 

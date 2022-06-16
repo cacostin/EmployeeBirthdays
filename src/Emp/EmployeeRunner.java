@@ -6,13 +6,19 @@ import java.io.*;
 
 public class EmployeeRunner {
 
-
     public static void main(String[] args) throws FileNotFoundException {
+        /* Initialize Employee reader */
         EmployeeReader r = new EmployeeReader();
+        /* Initialize ArrayList */
         ArrayList<Employee> e;
+        /* Set current date */
+        LocalDate date = LocalDate.now();
+
+
         Scanner s = new Scanner(System.in);
         System.out.println("Enter file name or press 1 to use default Employee array");
         String input = s.next();
+        /* If no file input, use default array */
         if(input.equals("1")) {
             String[] employees = {"Abe,Bee,10/29/1993", "Cee,Dee,2/10/1994", "Ee,Eff,1/17/1987",
                     "Gee,Eich,6/18/2002", "Aye,Jay,6/18/2002"};
@@ -21,13 +27,8 @@ public class EmployeeRunner {
             e = r.fileReader(input);
         }
 
-        LocalDate date = LocalDate.now();
-
-
+        /* Create the hashmap with key as birth month and value as Arraylist of Employees */
         HashMap<Integer, ArrayList<Employee>> map = r.setEmployees(e);
-
-
-
 
         System.out.println("" +
                 "What would you like to do?\n" +
@@ -85,8 +86,6 @@ public class EmployeeRunner {
 
             cmd = s.next();
         }
-
-
     }
 }
 
