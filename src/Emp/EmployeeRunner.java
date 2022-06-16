@@ -11,7 +11,7 @@ public class EmployeeRunner {
 
         String[] employees = {"Abe,Bee,10/29/1993", "Cee,Dee,2/10/1994", "Ee,Eff,1/17/1987"};
         Scanner s = new Scanner(System.in);
-        System.out.println("");
+
         System.out.println("" +
                 "What would you like to do?\n" +
                 "Press 1 to display Birthdays this month \n" +
@@ -19,6 +19,14 @@ public class EmployeeRunner {
                 "Press 3 to Find out which month has the most Birthdays! \n" +
                 "Press q to Quit");
         String cmd = s.next();
+
+        while(cmd !=  "q"){
+            switch(cmd){
+                case 1:
+
+            }
+        }
+
         EmployeeReader r = new EmployeeReader();
         ArrayList<Employee> e = r.readEmployees(employees);
         for (int i = 0; i < e.size(); i++) {

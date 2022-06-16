@@ -34,8 +34,6 @@ public class EmployeeReader {
 
         HashMap<Integer, ArrayList<Employee>> empMap = new HashMap<>();
 
-        System.out.println(empList.size());
-
         for (Employee temp : empList) {
             ArrayList<Employee> list = empMap.computeIfAbsent(temp.getBirthMonth(), k -> new ArrayList<>());
             list.add(temp);

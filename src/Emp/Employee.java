@@ -1,21 +1,28 @@
 package Emp;
+import java.util.*;
+import java.lang.*;
 
 public class Employee {
     private String first;
     private String last;
     private String birth;
 
-    public Employee (String first, String last, String birth){
-        this.first = first;
-        this.last = last;
-        this.birth = birth;
+    public Employee (String first, String last, String birth) throws IllegalArgumentException{
+        if(first.matches("[*/d*]")){
+            throw new IllegalArgumentException("Invalid First Name");
+        } else if(first.matches("[*/d*]")){
+            throw new IllegalArgumentException("Invalid Last Name");
+        }
+        setFirst(first);
+        setLast(last);
+        setBirth(birth);
     }
 
     public String getLast() {
         return last;
     }
 
-    public void setLast(String last) {
+    private void setLast(String last) {
         this.last = last;
     }
 
@@ -23,7 +30,7 @@ public class Employee {
         return birth;
     }
 
-    public void setBirth(String birth) {
+    private void setBirth(String birth) {
         this.birth = birth;
     }
 
@@ -31,7 +38,7 @@ public class Employee {
         return first;
     }
 
-    public void setFirst(String first) {
+    private void setFirst(String first) {
         this.first = first;
     }
 

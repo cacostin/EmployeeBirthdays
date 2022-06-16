@@ -6,13 +6,12 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeReaderTest {
-
+    String employees[] = {"Abe,Bee,10/29/1993", "Cee,Dee,2/10/1994", "Ee,Eff,1/17/1987"};
+    EmployeeReader r = new EmployeeReader();
+    ArrayList<Employee> e = r.readEmployees(employees);
     @org.junit.jupiter.api.Test
     void readEmployees() {
-        String employees[] = {"Abe,Bee,10/29/1993", "Cee,Dee,2/10/1994", "Ee,Eff,1/17/1987"};
-        EmployeeReader r = new EmployeeReader();
 
-        ArrayList<Employee> e = r.readEmployees(employees);
         assertTrue(!e.isEmpty());
         assertEquals(3,e.size());
         assertEquals("Abe", e.get(0).getFirst());
